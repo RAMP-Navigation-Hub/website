@@ -1,165 +1,62 @@
+
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RAMP Navigation Hub</title>
-  <meta name="description" content="Helping our community make the most of the NHS App.">
-  <style>
-    :root {
-      --navy: #123653;
-      --blue: #1479b8;
-      --green: #23886f;
-      --sky: #e7f6fc;
-      --yellow: #ffd85a;
-      --ink: #183042;
-      --muted: #526876;
-      --white: #ffffff;
-      --line: #d7e3e9;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--ink);
-      background: #f7fafb;
-      line-height: 1.55;
-    }
-    .hero {
-      background: linear-gradient(180deg, var(--sky), #ffffff);
-      padding: 56px 20px 44px;
-      text-align: center;
-      border-bottom: 1px solid var(--line);
-    }
-    .boat { font-size: 54px; margin-bottom: 12px; }
-    h1 {
-      margin: 0;
-      color: var(--navy);
-      font-size: clamp(2.2rem, 6vw, 4rem);
-      line-height: 1.05;
-    }
-    .strapline {
-      margin: 18px auto 0;
-      max-width: 760px;
-      color: var(--green);
-      font-size: clamp(1.2rem, 3vw, 1.7rem);
-      font-weight: 700;
-    }
-    .intro {
-      margin: 14px auto 0;
-      max-width: 720px;
-      color: var(--muted);
-      font-size: 1.08rem;
-    }
-    .notice {
-      max-width: 900px;
-      margin: 28px auto 0;
-      padding: 14px 18px;
-      background: var(--white);
-      border-left: 6px solid var(--blue);
-      border-radius: 10px;
-      color: var(--muted);
-      text-align: left;
-      box-shadow: 0 4px 18px rgba(18, 54, 83, 0.07);
-    }
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 48px 20px 70px;
-    }
-    .eyebrow {
-      color: var(--green);
-      font-weight: 700;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      font-size: .9rem;
-    }
-    h2 {
-      margin: 8px 0 24px;
-      color: var(--navy);
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-    }
-    .resource-card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 28px;
-      box-shadow: 0 8px 28px rgba(18, 54, 83, 0.08);
-    }
-    .badge {
-      display: inline-block;
-      background: #e8f4fb;
-      color: var(--blue);
-      font-weight: 700;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: .9rem;
-      margin-bottom: 12px;
-    }
-    .resource-card h3 {
-      margin: 0 0 10px;
-      color: var(--navy);
-      font-size: 1.55rem;
-    }
-    .resource-card p {
-      margin: 0 0 22px;
-      color: var(--muted);
-      font-size: 1.05rem;
-    }
-    .button {
-      display: inline-block;
-      background: var(--navy);
-      color: var(--white);
-      text-decoration: none;
-      font-weight: 700;
-      padding: 14px 20px;
-      border-radius: 10px;
-    }
-    .button:hover, .button:focus {
-      background: var(--blue);
-      outline: 3px solid var(--yellow);
-      outline-offset: 3px;
-    }
-    footer {
-      text-align: center;
-      padding: 28px 20px 40px;
-      color: var(--muted);
-      border-top: 1px solid var(--line);
-      background: var(--white);
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RAMP Navigation Hub</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#f7fafb;color:#183042;line-height:1.6}
+.hero{background:#eaf5fb;padding:50px 20px;text-align:center}
+h1{font-size:3rem;margin:.2em 0;color:#163b63}
+h2{color:#163b63}
+.tag{font-size:1.5rem;color:#22866d;font-weight:bold}
+.intro{max-width:700px;margin:auto;color:#456}
+.notice,.dev{max-width:850px;margin:20px auto;padding:16px;border-radius:10px}
+.notice{background:#fff;border-left:6px solid #1479b8}
+.dev{background:#fff4cc;border-left:6px solid #f0b400}
+main{max-width:850px;margin:40px auto;padding:0 20px}
+.card{background:white;border:1px solid #d9e3e8;border-radius:16px;padding:28px;box-shadow:0 6px 20px rgba(0,0,0,.08)}
+.button{display:inline-block;margin-top:18px;background:#163b63;color:white;text-decoration:none;padding:14px 22px;border-radius:8px;font-weight:bold}
+footer{text-align:center;padding:30px;color:#666}
+</style>
 </head>
 <body>
-  <header class="hero">
-    <div class="boat" aria-hidden="true">⛵</div>
-    <h1>RAMP Navigation Hub Test Site</h1>
-    <p class="strapline">Helping our community make the most of the NHS App</p>
-    <p class="intro">Friendly guidance from local volunteers, with links to trusted NHS information.</p>
-    <div class="notice">
-      <strong>Community-led and independent.</strong>
-      This is not an official NHS website. We help people find and use trusted NHS information.
-    </div>
-  </header>
 
-  <main>
-    <div class="eyebrow">First trusted resource</div>
-    <h2>Start with official NHS App information</h2>
+<header class="hero">
+<div style="font-size:54px">⛵</div>
+<h1>RAMP Navigation Hub (Test Site)</h1>
+<div class="tag">Helping our community make the most of the NHS App</div>
+<p class="intro">Friendly guidance from local volunteers, with links to trusted NHS information.</p>
 
-    <article class="resource-card">
-      <div class="badge">Official government resource</div>
-      <h3>NHS App Campaign Resource Centre</h3>
-      <p>Access official materials and guidance designed to help people understand and use the NHS App.</p>
-      <a class="button"
-         href="https://campaignresources.dhsc.gov.uk/campaigns/nhs-app/"
-         target="_blank"
-         rel="noopener noreferrer">
-        Open the official resource
-      </a>
-    </article>
-  </main>
+<div class="dev">
+<strong>🚧 Demonstration website.</strong><br>
+This website is currently under development by the RAMP Patient Participation Group.
+It is being used to test GitHub Pages and will continue to evolve as new content is added.
+</div>
 
-  <footer>
-    RAMP Navigation Hub — a community initiative from the RAMP Patient Participation Group.
-  </footer>
+<div class="notice">
+<strong>Community-led and independent.</strong>
+This is not an official NHS website. We help people find and use trusted NHS information.
+</div>
+</header>
+
+<main>
+<h2>Start with official NHS App information</h2>
+
+<div class="card">
+<h3>NHS App Campaign Resource Centre</h3>
+<p>Access official materials and guidance designed to help people understand and use the NHS App.</p>
+
+<a class="button"
+href="https://campaignresources.dhsc.gov.uk/campaigns/nhs-app/"
+target="_blank">Open the official resource</a>
+</div>
+</main>
+
+<footer>
+RAMP Navigation Hub – Community Project • Test Website
+</footer>
+
 </body>
 </html>
