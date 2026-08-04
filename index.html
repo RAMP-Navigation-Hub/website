@@ -4,3 +4,194 @@
 <h2>What would help you today?</h2><div class="grid"><article class="card blue"><div class="icon-route">🧭</div><h3>Understand where to start</h3><p>Use the journey map to identify your next step and the most relevant guide.</p><a href="journey.html">Start your journey</a></article><article class="card green"><div class="icon-route">✓</div><h3>Check your phone</h3><p>Use six simple Apple or Android checks before trying to install the NHS App.</p><a href="readiness.html">Check device readiness</a></article><article class="card orange"><div class="icon-route">▶</div><h3>Watch a demonstration</h3><p>Watch short NHS videos about getting started and using NHS App services.</p><a href="videos.html">Watch the playlists</a></article></div>
 <div class="callout green"><h2>Prefer not to install an app?</h2><p>You can use NHS App services through a web browser. No app download or device-readiness checklist is needed.</p><a class="button green" href="https://www.nhsapp.service.nhs.uk/" rel="noopener" target="_blank">Use NHS App services in a browser</a></div>
 <h2>Choose a guide</h2><div class="grid"><article class="card blue"><span class="badge">G1</span><h3>Self-Help Guide</h3><p>Work through the setup process yourself.</p><a href="guides.html#g1">Open G1</a></article><article class="card green"><span class="badge green">G2</span><h3>Support Guide</h3><p>Find out what help is available while you stay in control.</p><a href="guides.html#g2">Open G2</a></article><article class="card orange"><span class="badge orange">G3</span><h3>Preparation Guide</h3><p>Check what you need before starting.</p><a href="guides.html#g3">Open G3</a></article><article class="card blue"><span class="badge">G4</span><h3>Using the NHS App</h3><p>Use prescriptions, messages, health records and appointments after setup.</p><a href="guides.html#g4">Open G4</a></article></div></main><footer class="footer"><div class="footer-inner"><p><strong>RAMP Navigation Hub</strong> helps people understand and navigate the NHS App. It does not access NHS accounts or provide medical advice.</p><p class="small">Never share passwords, one-time security codes, linkage keys, identity documents, NHS numbers or detailed medical information through this site.</p></div></footer><script src="assets/js/site.js"></script></body></html>
+
+
+The distortion is most likely caused by the image being forced into the declared proportions:
+
+height="1080"
+width="720"
+That assumes the thumbnail is exactly 720 × 1080, a 2:3 portrait ratio. If the actual WebP has different dimensions, the browser or your CSS may stretch it.
+
+Replace the image element with:
+
+<img
+  class="hero-preview"
+  src="assets/images/your-nhs-app-journey.webp"
+  alt="Preview of the Your NHS App Journey guide"
+  decoding="async"
+  fetchpriority="high"
+  loading="eager"
+/>
+Then add this to assets/css/styles.css:
+
+.hero-preview {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  object-fit: contain;
+  margin-inline: auto;
+}
+This preserves the thumbnail’s natural proportions rather than stretching it.
+
+If the hero layout itself assigns a fixed height to every image, also check for a rule similar to:
+
+.hero img {
+  width: 100%;
+  height: 400px;
+}
+Change it to:
+
+.hero img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+The most reliable correction is to use the image’s real pixel dimensions in the HTML while retaining height: auto in CSS. For example, if the WebP is actually 800 × 1131:
+
+width="800" height="1131"
+The existing thumbnail reference is:
+
+src="assets/images/your-nhs-app-journey.webp"
+so the file path itself looks fine; it is the imposed sizing that needs correcting.
+
+
+can you generate the corretec files that need to b replaced
+
+Yes. Only the homepage file needs replacing.
+
+index.html
+
+Download the ZIP package
+
+Replace the existing root-level index.html in the GitHub repository. The image file and existing stylesheet can remain unchanged. 
+
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="Community guidance to help people discover, prepare for and use the NHS App." name="description"/>
+  <title>Home | RAMP Navigation Hub</title>
+  <link href="assets/css/styles.css" rel="stylesheet"/>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <div class="notice">Community navigation resource — not an official NHS website</div>
+
+  <header class="site-header">
+    <div class="topbar">
+      <div class="brand">RAMP Navigation Hub</div>
+      <p class="tagline">Helping our community make the most of the NHS App</p>
+    </div>
+  </header>
+
+  <nav aria-label="Main navigation" class="nav">
+    <div class="nav-inner">
+      <a aria-current="page" href="index.html">Home</a>
+      <a href="journey.html">Start your journey</a>
+      <a href="readiness.html">Device readiness</a>
+      <a href="guides.html">Guides</a>
+      <a href="videos.html">Watch demonstrations</a>
+      <a href="resources.html">Official NHS information</a>
+      <a href="about.html">About and privacy</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="hero">
+      <div>
+        <span class="badge">Start here</span>
+        <h1>Your NHS App journey</h1>
+        <p class="lead">Understand your options, check what is ready, choose the right guide and find trusted NHS information.</p>
+        <div class="actions">
+          <a class="button" href="journey.html">Start your journey</a>
+          <a class="button secondary" href="guides.html">View the guides</a>
+        </div>
+        <p class="small">You can use NHS App services on a smartphone, tablet or through a web browser on a computer. Your choice can change over time.</p>
+      </div>
+
+      <img
+        alt="Preview of the Your NHS App Journey guide"
+        decoding="async"
+        fetchpriority="high"
+        loading="eager"
+        src="assets/images/your-nhs-app-journey.webp"
+        style="display:block;width:100%;max-width:420px;height:auto!important;object-fit:contain;margin-inline:auto;"
+      />
+    </section>
+
+    <h2>What would help you today?</h2>
+    <div class="grid">
+      <article class="card blue">
+        <div class="icon-route">🧭</div>
+        <h3>Understand where to start</h3>
+        <p>Use the journey map to identify your next step and the most relevant guide.</p>
+        <a href="journey.html">Start your journey</a>
+      </article>
+
+      <article class="card green">
+        <div class="icon-route">✓</div>
+        <h3>Check your phone</h3>
+        <p>Use six simple Apple or Android checks before trying to install the NHS App.</p>
+        <a href="readiness.html">Check device readiness</a>
+      </article>
+
+      <article class="card orange">
+        <div class="icon-route">▶</div>
+        <h3>Watch a demonstration</h3>
+        <p>Watch short NHS videos about getting started and using NHS App services.</p>
+        <a href="videos.html">Watch the playlists</a>
+      </article>
+    </div>
+
+    <div class="callout green">
+      <h2>Prefer not to install an app?</h2>
+      <p>You can use NHS App services through a web browser. No app download or device-readiness checklist is needed.</p>
+      <a class="button green" href="https://www.nhsapp.service.nhs.uk/" rel="noopener" target="_blank">Use NHS App services in a browser</a>
+    </div>
+
+    <h2>Choose a guide</h2>
+    <div class="grid">
+      <article class="card blue">
+        <span class="badge">G1</span>
+        <h3>Self-Help Guide</h3>
+        <p>Work through the setup process yourself.</p>
+        <a href="guides.html#g1">Open G1</a>
+      </article>
+
+      <article class="card green">
+        <span class="badge green">G2</span>
+        <h3>Support Guide</h3>
+        <p>Find out what help is available while you stay in control.</p>
+        <a href="guides.html#g2">Open G2</a>
+      </article>
+
+      <article class="card orange">
+        <span class="badge orange">G3</span>
+        <h3>Preparation Guide</h3>
+        <p>Check what you need before starting.</p>
+        <a href="guides.html#g3">Open G3</a>
+      </article>
+
+      <article class="card blue">
+        <span class="badge">G4</span>
+        <h3>Using the NHS App</h3>
+        <p>Use prescriptions, messages, health records and appointments after setup.</p>
+        <a href="guides.html#g4">Open G4</a>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p><strong>RAMP Navigation Hub</strong> helps people understand and navigate the NHS App. It does not access NHS accounts or provide medical advice.</p>
+      <p class="small">Never share passwords, one-time security codes, linkage keys, identity documents, NHS numbers or detailed medical information through this site.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+</body>
+</html>
+
+
