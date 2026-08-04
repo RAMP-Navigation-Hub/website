@@ -1,0 +1,10 @@
+RAMP Navigation Hub complete site package — v1.5
+
+Based on the supplied v1.4 download-only package.
+Only the homepage hero-thumbnail styling has changed.
+
+Change:
+- The hero image now explicitly uses height:auto and object-fit:contain so its original proportions are preserved.
+- All HTML pages, documents, images, JavaScript and other CSS remain included.
+
+Upload the complete contents of this package to the repository root, preserving the folder structure.
