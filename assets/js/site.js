@@ -1,1 +1,0 @@
-document.querySelectorAll('a[target="_blank"]').forEach(a=>{if(!a.textContent.includes('(opens in new tab)')){const s=document.createElement('span');s.className='small';s.textContent=' (opens in new tab)';a.appendChild(s)}});
