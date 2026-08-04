@@ -34,3 +34,9 @@ This is a static, accessible prototype built from the supplied RAMP NHS App guid
 - Prioritised the homepage hero image.
 - Changed YouTube embeds to click-to-load players.
 - Preserved the original high-resolution PDFs for viewing and printing.
+
+
+## Version 1.4 consistency update
+- Added G4 to the homepage guide choices.
+- Removed PDF preview/open actions.
+- Each PDF card now provides one direct Download PDF action.
